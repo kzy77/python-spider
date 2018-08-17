@@ -1,10 +1,11 @@
 # -*-coding:utf-8 -*-
-import requests
-from lxml import etree
-from bs4 import BeautifulSoup
+import os
+import re
+import time
 import urllib
-import time, re, types, os
 
+import requests
+from bs4 import BeautifulSoup
 
 """
 代码写的匆忙，本来想再重构下，完善好注释再发，但是比较忙，想想算了，所以自行完善吧！写法很不规范，勿见怪。

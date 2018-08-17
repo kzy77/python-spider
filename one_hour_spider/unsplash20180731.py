@@ -11,8 +11,10 @@ from contextlib import closing
 """
 
 # 本地保存图片根路径（请确保根路径存在）
-save_path = 'G:/pythonlearn'
+save_path = 'D:/pythonlearn'
 dir_path=save_path+'/'+'unsplash-image'
+if not os.path.exists(save_path):
+    os.mkdir(save_path)
 if not os.path.exists(dir_path):
     os.path.join(save_path, 'unsplash-image')
     os.mkdir(dir_path)
@@ -25,7 +27,9 @@ while n>2:
     html=json.loads(req.text)
     for each in html:
         downloadurl=each['links']["download"]
+        print('图片地址为：'+downloadurl)
         jpgrep=requests.get(url=downloadurl)
+        print('已获取图片，准备存入本地')
         with closing(requests.get(url=downloadurl, stream=True)) as r:
             with open(dir_path+'/'+each['id']+'.jpg', 'ab+') as f:
                 for chunk in r.iter_content(chunk_size=1024):
