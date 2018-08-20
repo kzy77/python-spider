@@ -1,5 +1,4 @@
 .DS_Stors
-.idea
 /target/
 .settings/
 .project
@@ -8,7 +7,10 @@
 /store/
 /tmp/
 
+#idea
 *.idea
+.idea
+*.iml
 
 #python
 /venv
