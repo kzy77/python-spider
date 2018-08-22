@@ -147,6 +147,7 @@ if __name__ == '__main__':
 			proxys_list.remove(proxy)
 			print("ip连接超时, 重新获取中!")
 		if average_time < 200:
+			print("%s ping %s ms"%(ip,average_time))
 			break
 
 	#去掉已经使用的IP
